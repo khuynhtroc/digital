@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "seo",
+    "name": "SEO",
+    "description": "Tài liệu, công cụ hỗ trợ SEO.",
+    "type": "product"
+  },
+  {
+    "slug": "design",
+    "name": "Design",
+    "description": "Tài nguyên thiết kế, UI/UX.",
+    "type": "product"
+  }
+]

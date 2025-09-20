@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "marketing",
+    "name": "Marketing",
+    "description": "Kiến thức marketing online.",
+    "type": "post"
+  },
+  {
+    "slug": "case-study",
+    "name": "Case Study",
+    "description": "Phân tích các dự án SEO thực tế.",
+    "type": "post"
+  }
+]

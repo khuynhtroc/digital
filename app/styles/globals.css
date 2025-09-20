@@ -1,0 +1,45 @@
+/* globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body font */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937; /* text-gray-800, gần giống màu chữ trang mẫu */
+  background-color: #ffffff; /* nền trắng */
+}
+
+/* Links */
+a {
+  color: #1d4ed8; /* link màu xanh chuẩn trang mẫu */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #111827; /* text-gray-900, tối hơn cho tiêu đề */
+}
+
+/* Buttons */
+button, .btn {
+  background-color: #1d4ed8; /* màu chính nút */
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+button:hover, .btn:hover {
+  background-color: #2563eb; /* hover effect */
+}
+
+/* Card shadow & rounded */
+.card {
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); /* shadow-sm */
+}
