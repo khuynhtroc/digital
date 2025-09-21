@@ -15,6 +15,7 @@ export default async function DashboardPage() {
     );
   }
 
+  const userEmail = user.primaryEmailAddress?.emailAddress;
   const productCategories = await getCategories("product");
   const postCategories = await getCategories("post");
 
@@ -29,10 +30,12 @@ export default async function DashboardPage() {
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
-      <header className="flex justify-between items-center">
+      <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h1 className="text-3xl font-bold">Dashboard Admin</h1>
         <div className="flex items-center gap-4">
-          <span className="text-gray-700">Chào, {user.firstName || user.email}</span>
+          <span className="text-gray-700">
+            Chào, {user.firstName || userEmail || "Admin"}
+          </span>
           <SignOutButton>
             <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
               Đăng xuất
@@ -41,7 +44,7 @@ export default async function DashboardPage() {
         </div>
       </header>
 
-      {/* Thống kê chính */}
+      {/* Thống kê chính: Sản phẩm & Bài viết */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Sản phẩm */}
         <div className="p-4 border rounded shadow-sm bg-white">

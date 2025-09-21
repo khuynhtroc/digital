@@ -15,6 +15,16 @@ export function getAllProducts() {
   return products;
 }
 
+export type Product = {
+  title: string;
+  slug: string;
+  category: string;
+  description?: string;
+  image?: string;
+  price?: number;
+  // thêm các trường khác nếu cần
+};
+
 export function getProductBySlug(slug: string) {
   const filePath = path.join(productsDir, `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf8");

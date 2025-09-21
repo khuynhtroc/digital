@@ -1,17 +1,25 @@
-import { getAllPosts } from "lib/posts";
+// app/blog/[slug]/page.tsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { getAllPosts } from "@/lib/posts";
 
+type BlogPostParams = {
+  params: { slug: string };
+};
+
+// Tạo danh sách slug cho pre-rendering
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; // 👈 await params
-  const filePath = path.join(process.cwd(), "content/blog", `${params.slug}`);
+// Trang bài viết
+export default async function BlogPost({ params }: BlogPostParams) {
+  const { slug } = params;
+
+  const filePath = path.join(process.cwd(), "content/blog", `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { content, data } = matter(fileContent);
 
@@ -23,18 +31,19 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   );
 }
 
+// Metadata cho SEO
+export async function generateMetadata({ params }: BlogPostParams) {
+  const { slug } = params;
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; // 👈 chỗ này
-  const filePath = path.join(process.cwd(), "content/blog", `${params.slug}`);
+  const filePath = path.join(process.cwd(), "content/blog", `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data } = matter(fileContent);
 
   return {
     title: data.title,
-    description: data.excerpt,
+    description: data.excerpt || "",
     openGraph: {
-      images: [data.image],
+      images: data.image ? [data.image] : [],
     },
   };
 }
