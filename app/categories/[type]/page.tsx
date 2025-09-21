@@ -47,7 +47,7 @@ export default function CategoryPage({
               className="border rounded-lg p-6 shadow hover:shadow-lg transition bg-white"
             >
               <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-              {item.excerpt && <p className="text-gray-600">{item.excerpt}</p>}
+              {item.description && <p className="text-gray-600">{item.description}</p>}
             </Link>
           ))}
         </div>

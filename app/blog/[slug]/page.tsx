@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
 
   return {
     title: data.title,
-    description: data.excerpt || "",
+    description: data.description || "",
     openGraph: {
       images: data.image ? [data.image] : [],
     },

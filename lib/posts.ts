@@ -6,7 +6,8 @@ export type Post = {
   slug: string;
   title: string;
   date: string;
-  excerpt: string;
+  description: string;
+  category: string;   // 👈 thêm field category
 };
 
 const postsDirectory = path.join(process.cwd(), "content/blog");
@@ -15,7 +16,7 @@ export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
 
   return fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, "");
+    const slug = fileName.replace(/\.mdx$/, "");
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -25,7 +26,7 @@ export function getAllPosts(): Post[] {
       slug,
       title: data.title,
       date: data.date,
-      excerpt: data.excerpt,
+      description: data.description,
       category: (data.category || "uncategorized").toLowerCase(),
     };
   });

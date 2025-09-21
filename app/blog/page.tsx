@@ -17,7 +17,7 @@ export default function BlogPage() {
               <Link href={`/blog/${post.slug}`}>{post.title}</Link>
             </h2>
             <p className="text-gray-500 text-sm">{post.date}</p>
-            <p className="mt-2 text-gray-700">{post.excerpt}</p>
+            <p className="mt-2 text-gray-700">{post.description}</p>
             <Link
               href={`/blog/${post.slug}`}
               className="text-blue-600 hover:underline text-sm"

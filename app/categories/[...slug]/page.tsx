@@ -67,7 +67,7 @@ export default async function CategoryPage({
                 className="border rounded-lg p-6 shadow hover:shadow-lg transition bg-white"
               >
                 <h2 className="text-xl font-semibold">{product.title}</h2>
-                <p className="text-gray-600">{product.excerpt}</p>
+                <p className="text-gray-600">{product.description}</p>
               </Link>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default async function CategoryPage({
                 className="border rounded-lg p-6 shadow hover:shadow-lg transition bg-white"
               >
                 <h2 className="text-xl font-semibold">{post.title}</h2>
-                <p className="text-gray-600">{post.excerpt}</p>
+                <p className="text-gray-600">{post.description}</p>
               </Link>
             ))}
           </div>

@@ -8,7 +8,7 @@ export default function PostCard({ post }) {
         <h3 className="text-lg font-semibold mb-2">
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h3>
-        <p className="text-sm text-gray-600">{post.excerpt}</p>
+        <p className="text-sm text-gray-600">{post.description}</p>
       </div>
     </div>
   );
