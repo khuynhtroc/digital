@@ -1,4 +1,4 @@
-"use client";
+"use client"; // ⚠️ bắt buộc để tránh prerender server
 
 export default function NotFound() {
   return (
