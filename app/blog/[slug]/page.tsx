@@ -24,10 +24,16 @@ export default async function BlogPost({ params }: BlogPostParams) {
   const { content, data } = matter(fileContent);
 
   return (
-    <article className="col-span-12 bg-white p-6 rounded shadow">
-      <h1 className="text-2xl font-bold mb-4">{data.title}</h1>
-      <MDXRemote source={content} />
-    </article>
+      <main className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
+        <h1 className="text-3xl font-bold mb-4">{data.title}</h1>
+        {data.description && <p className="text-gray-700 mb-6">{data.description}</p>}
+        {data.image && <img src={data.image} alt={data.title} className="rounded mb-6 shadow" />}
+        {data.content && (
+          <article className="prose prose-slate">
+            <MDXRemote source={content} />
+          </article>
+        )}
+      </main>
   );
 }
 

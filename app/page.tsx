@@ -47,7 +47,7 @@ export default async function HomePage() {
           <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">
             Sản phẩm nổi bật
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8">
             {products.map((product) => (
               <ProductCard key={product.slug} {...product} />
             ))}

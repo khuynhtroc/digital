@@ -5,7 +5,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="col-span-12">
+    <div className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-6">Blog</h1>
       <div className="space-y-6">
         {posts.map((post) => (

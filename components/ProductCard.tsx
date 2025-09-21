@@ -24,8 +24,8 @@ export default function ProductCard({ slug, title, description, price, image }: 
         )}
         <div className="p-4">
           <h3 className="text-lg font-semibold mb-2">{title}</h3>
-          <p className="text-sm text-gray-600 mb-2">{description}</p>
-          {price && <p className="text-blue-600 font-bold">{price.toLocaleString()}₫</p>}
+          {/*<p className="text-sm text-gray-600 mb-2">{description}</p>
+          {price && <p className="text-blue-600 font-bold">{price.toLocaleString()}₫</p>}*/}
         </div>
       </div>
     </Link>

@@ -15,7 +15,7 @@ export default async function ProductPage({ params }) {
   const { content, data } = matter(fileContent);
 
   return (
-    <article className="col-span-12 bg-white p-6 rounded shadow">
+    <article className="flex-1 container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row gap-6">
         <img src={data.image} alt={data.title} className="w-full md:w-1/3 h-64 object-cover rounded" />
         <div className="flex-1">
